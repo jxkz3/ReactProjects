@@ -1,0 +1,7 @@
+# Ignore node_modules in all child projects
+*/node_modules/
+*/build/
+*.env
+.DS_Store
+.vscode/
+.idea/
