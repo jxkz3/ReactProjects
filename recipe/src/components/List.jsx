@@ -1,11 +1,11 @@
 function List(props) {
-  const items = ["Chicken", "Oregano", "Tomatoes"];
-
-  const fruits = items.map((item) => {
-    return <li key={item}>{item}</li>;
-  });
-
-  return <ul>{fruits}</ul>;
+  return (
+    <ul className="list-genre">
+      {props.best.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
 }
 
 export default List;

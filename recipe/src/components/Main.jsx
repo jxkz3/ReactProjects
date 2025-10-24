@@ -1,13 +1,10 @@
 import List from "./List.jsx";
 
-function main() {
-  const ingredients = ["Chicken", "Oregano", "Tomatoes"];
+function Main() {
+  const genre = ["action", "sc-fi", "Fantasy"];
 
   function Submit(event) {
     event.preventDefault();
-    console.log("jasik");
-    console.log({ ingredients });
-    ingredients.push("jack");
   }
 
   return (
@@ -16,9 +13,9 @@ function main() {
         <input type="text" placeholder="favourite Genre..." name="Gener" />
         <button>Add</button>
       </form>
-      <List />
+      <List best={genre} />
     </main>
   );
 }
 
-export default main;
+export default Main;
