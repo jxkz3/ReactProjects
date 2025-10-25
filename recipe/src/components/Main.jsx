@@ -1,16 +1,12 @@
 import List from "./List.jsx";
 import React, { useState } from "react";
 
-function Main() {
+function Main({ darkMode }) {
   const [genre, setGenre] = useState([]);
 
   function addGenre(formData) {
     const newGenre = formData.get("genre");
     setGenre((g) => [...g, newGenre]);
-  }
-
-  function genreHeading() {
-    return genre.length > 0 ? "genre on Hand" : null;
   }
 
   return (
@@ -19,10 +15,21 @@ function Main() {
         <input type="text" placeholder="favourite Genre..." name="genre" />
         <button>Add</button>
       </form>
-      <section>
-        <h2>{genreHeading()}</h2>
-        <List best={genre} />
-      </section>
+      {genre.length > 0 && (
+        <section>
+          <h2>Genres on Hand :</h2>
+          <ul className="list-genre">
+            <List best={genre} />
+          </ul>
+          {genre.length > 1 && (
+            <div className="ready-genre">
+              <h2>Ready for animes ?</h2>
+              <p>Genrate best animes for based on your favourite keywords</p>
+              <button>Get Animes</button>
+            </div>
+          )}
+        </section>
+      )}
     </main>
   );
 }
