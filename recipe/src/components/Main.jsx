@@ -36,9 +36,10 @@ function Main({ darkMode }) {
               <button onClick={animeButton}>Get Animes</button>
             </div>
           )}
+          <p>Here is the anime list: </p>
         </section>
       )}
-      {animeShown && <Anime />}
+      {animeShown || <Anime />}
     </main>
   );
 }
