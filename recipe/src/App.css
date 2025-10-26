@@ -10,14 +10,15 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  background-color: #00ddff13;
+  background-color: #bf00ff35;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
   height: 80px;
-  box-shadow: 0px 4px 10px rgba(235, 13, 231, 0.281);
-  color: rgb(209, 99, 224);
+  box-shadow: 1px 3px 100px rgba(235, 13, 231, 0.281);
+  font-weight: bold;
+  color: rgb(57, 3, 74);
 }
 
 header h1 {
@@ -100,5 +101,5 @@ main {
 .ready-genre {
   background-color: #f3d9fa;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 7px;
 }

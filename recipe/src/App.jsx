@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main darkMode={true} />
+      <Main darkMode={false} />
     </div>
   );
 }
