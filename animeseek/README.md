@@ -77,7 +77,7 @@ const res = await axios.get(
 
 ```bash
 # Clone this repository
-git clone https://github.com/yourusername/anime-picker.git
+git clone https://github.com/jxkz3/ReactProjects.git
 
 # Navigate to project folder
 cd anime-picker
