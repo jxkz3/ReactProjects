@@ -6,9 +6,12 @@ function Main({ darkMode }) {
   const [genre, setGenre] = useState([]);
   const [animeShown, setAnimeShown] = useState(false);
 
-  function addGenre(formData) {
-    const newGenre = formData.get("genre");
-    setGenre((g) => [...g, newGenre]);
+  function addGenre(e) {
+    e.preventDefault();
+    const newGenre = e.target.genre.value.trim();
+    if (!newGenre) return;
+    setGenre((prev) => [...prev, newGenre]);
+    e.target.reset();
   }
 
   const styles = { backgroundColor: darkMode ? "#000000cf" : "#e4c6ec2b" };
@@ -19,10 +22,11 @@ function Main({ darkMode }) {
 
   return (
     <main style={styles}>
-      <form className="genre-form" action={addGenre}>
+      <form className="genre-form" onSubmit={addGenre}>
         <input type="text" placeholder="favourite Genre..." name="genre" />
-        <button>Add</button>
+        <button type="submit">Add</button>
       </form>
+
       {genre.length > 0 && (
         <section>
           <h2>Genres on Hand :</h2>
@@ -36,10 +40,9 @@ function Main({ darkMode }) {
               <button onClick={animeButton}>Get Animes</button>
             </div>
           )}
-          <p>Here is the anime list: </p>
         </section>
       )}
-      {animeShown || <Anime />}
+      {animeShown && <Anime genre={genre} animeShown={animeShown} />}
     </main>
   );
 }

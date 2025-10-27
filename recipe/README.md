@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# 🧩 Anime Picker – React + Gemini + Jikan API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🎯 Description
 
-## Available Scripts
+**Anime Picker** is a smart React-based web app that blends **AI recommendations** with **real anime data**.  
+Users can input their favorite genres, and the app uses **Gemini AI** to suggest anime titles.  
+Then, for each suggested title, it fetches detailed information — such as images, synopsis, and ratings — from the **Jikan API** (MyAnimeList data).
 
-In the project directory, you can run:
+This project showcases real-world skills in **React**, **API chaining**, and **frontend data rendering**.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🖼️ Preview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Anime Picker Screenshot](./preview.png)
 
-### `npm test`
+> _(i will update soon.)_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 🎭 Add multiple anime genres dynamically
+- 🤖 Get AI-powered anime suggestions from Gemini
+- 🖼️ Fetch anime images and descriptions via Jikan API
+- ⏳ Loading indicators & clean error handling
+- 🌗 Optional dark mode
+- 🧱 Modular component structure (Main, Anime, List, Card)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧠 Tech Stack
 
-### `npm run eject`
+- **Frontend:** React (CRA)
+- **Styling:** CSS
+- **APIs:**
+  - 🧩 **Gemini AI API** (for generating anime titles)
+  - 📚 **Jikan REST API** (for fetching anime details by title)
+- **HTTP:** Axios
+- **State:** useState, useEffect hooks
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ How It Works
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. User enters favorite genres.
+2. App sends those genres to the **Gemini API** to generate top anime titles.
+3. For each returned title, it calls **Jikan API** to fetch:
+   - Anime image
+   - Description (synopsis)
+   - Rating and popularity
+4. Displays everything beautifully on the screen (react cards).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🔗 Example API Flow
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```js
+// Gemini AI (backend)
+const prompt = `List 5 best anime titles for ${genre.join(", ")}`;
+const response = await axios.post("http://localhost:5000/api/gemini", {
+  prompt,
+});
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+// Example Gemini response:
+["Naruto", "Attack on Titan", "Bleach", "One Piece", "Demon Slayer"];
 
-### Code Splitting
+// Frontend calls Jikan for each title
+const res = await axios.get(
+  `https://api.jikan.moe/v4/anime?q=${title}&limit=1`
+);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## ⚙️ Installation & Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+# Clone this repository
+git clone https://github.com/yourusername/anime-picker.git
 
-### Making a Progressive Web App
+# Navigate to project folder
+cd anime-picker
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Install dependencies
+npm install
 
-### Advanced Configuration
+# Run frontend
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> Backend (`/api/gemini`) should be running locally or on your hosted server.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 💡 Learning Outcomes
 
-### `npm run build` fails to minify
+- Combining AI with real-world APIs
+- Using Axios for async API chaining
+- Rendering dynamic UI based on fetched data
+- Managing React state and loading conditions
+- Clean frontend component architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 👨‍💻 Author
+
+**Jasik MJ**  
+📧 jasikmj02@gmail.com
+🌐 [LinkedIn](https://linkedin.com/in/jxkz) • [GitHub](https://github.com/jxkz)
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** — feel free to use and modify it.

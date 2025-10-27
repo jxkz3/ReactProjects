@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Anime() {
+function Anime({ genre, animeShown }) {
   const [response, setResponse] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
+  console.log(genre.join(", "));
+
+  useEffect(() => {
+    if (animeShown) {
+      generateAnime();
+    }
+  }, [animeShown]);
+
   async function generateAnime() {
     setIsLoading(true);
+
     try {
-      const prompt =
-        "Recommend 5 popular anime TITLE , DONT GIVE ME ANYTHING ELSE ONLY TITLES for fantasy and Adventure genres";
+      const prompt = `List exactly 10 of the best anime titles for the ${genre.join(
+        ", "
+      )} genre.
+                      Only return the titles — no numbers, no bullet points,
+                      no symbols, and no extra text.`;
 
       // call backend instead of Gemini directly
       const res = await axios.post("http://localhost:5000/api/gemini", {
@@ -29,8 +41,10 @@ function Anime() {
 
   return (
     <section>
+      <p>
+        animes {genre.join(", ")} {animeShown}
+      </p>
       <h2>Best Animes in these genre</h2>
-      <button onClick={generateAnime}>Generate </button>
       <p>{isLoading ? "Loading..." : response} </p>
     </section>
   );
