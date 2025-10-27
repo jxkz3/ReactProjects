@@ -5,3 +5,26 @@
 .DS_Store
 .vscode/
 .idea/
+
+# Ignore node_modules in all subfolders
+*/node_modules/
+**/node_modules/
+
+# Ignore build folders (frontend or backend)
+*/build/
+**/build/
+*/dist/
+**/dist/
+
+# Ignore environment files
+*.env
+
+# Ignore IDE and system files
+.DS_Store
+.vscode/
+.idea/
+
+# Ignore log and lock files
+*.log
+package-lock.json
+yarn.lock

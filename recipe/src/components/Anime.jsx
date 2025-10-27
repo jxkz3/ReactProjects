@@ -3,19 +3,18 @@ import axios from "axios";
 
 function Anime() {
   const [response, setResponse] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   async function generateAnime() {
+    setIsLoading(true);
     try {
       const prompt =
-        "Recommend 5 popular anime  TITLE , DONT GIVE ME ANYTHING ELSE ONLY TILTES for Action and Adventure genres";
-      const apiKey = process.env.REACT_APP_GEMINI_API_KEY;
+        "Recommend 5 popular anime TITLE , DONT GIVE ME ANYTHING ELSE ONLY TITLES for fantasy and Adventure genres";
 
-      const res = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
-        {
-          contents: [{ parts: [{ text: prompt }] }],
-        }
-      );
+      // call backend instead of Gemini directly
+      const res = await axios.post("http://localhost:5000/api/gemini", {
+        prompt,
+      });
 
       const text =
         res.data.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
@@ -24,6 +23,7 @@ function Anime() {
       console.error("Gemini API error:", err);
       setResponse("Error fetching response");
     } finally {
+      setIsLoading(false);
     }
   }
 
@@ -31,7 +31,7 @@ function Anime() {
     <section>
       <h2>Best Animes in these genre</h2>
       <button onClick={generateAnime}>Generate </button>
-      <p> Loading...{response}</p>
+      <p>{isLoading ? "Loading..." : response} </p>
     </section>
   );
 }
