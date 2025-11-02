@@ -1,6 +1,7 @@
 import List from "./List.jsx";
 import React, { useState } from "react";
 import Anime from "./Anime.jsx";
+import AnimeCard from "./AnimeCard.jsx";
 
 function Main({ darkMode }) {
   const [genre, setGenre] = useState([]);
@@ -43,6 +44,18 @@ function Main({ darkMode }) {
         </section>
       )}
       {animeShown && <Anime genre={genre} animeShown={animeShown} />}
+
+      <div className="anime-grid">
+        <AnimeCard />
+        <AnimeCard />
+        <AnimeCard />
+        <AnimeCard />
+        <AnimeCard />
+        <AnimeCard />
+        <AnimeCard />
+        <AnimeCard />
+        <AnimeCard />
+      </div>
     </main>
   );
 }
