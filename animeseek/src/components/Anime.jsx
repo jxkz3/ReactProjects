@@ -8,9 +8,7 @@ function Anime({ genre, animeShown }) {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (animeShown) {
-      generateAnime();
-    }
+    if (animeShown) generateAnime();
   }, [animeShown]);
 
   async function generateAnime() {
@@ -18,19 +16,16 @@ function Anime({ genre, animeShown }) {
     setError("");
 
     try {
-      const prompt = `List exactly 10 of the best anime titles for the ${genre.join(
+      const prompt = `List exactly 3 of the best anime titles for the ${genre.join(
         ", "
-      )} genre. Only return the titles — no numbers, no bullet points, no symbols, and no extra text.`;
+      )} genre. Only return the titles — no numbers, no bullet points, and no extra text.`;
 
-      // Backend request
       const res = await axios.post("http://localhost:5000/api/gemini", {
         prompt,
       });
+      const text = res.data.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
-      const text =
-        res.data.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
-
-      // Cleanly split and filter titles
+      // Split titles neatly
       const splitTitles = text
         .split(/\n|,/)
         .map((t) => t.trim())
@@ -39,7 +34,7 @@ function Anime({ genre, animeShown }) {
       setTitles(splitTitles);
     } catch (err) {
       console.error("Gemini API error:", err);
-      setError("Error fetching response");
+      setError("Error fetching AI response.");
     } finally {
       setIsLoading(false);
     }
@@ -48,16 +43,16 @@ function Anime({ genre, animeShown }) {
   return (
     <section>
       <h2>Best Animes in these genres</h2>
-      {animeShown && <p>Genres: {genre.join(", ")}</p>}
+      {animeShown && <h3 className="genre-show">{genre.join(", ")}</h3>}
 
       {isLoading ? (
         <p>Loading...</p>
       ) : error ? (
         <p style={{ color: "red" }}>{error}</p>
       ) : (
-        <div>
-          {titles.map((title, index) => (
-            <AnimeCard key={index} title={title} />
+        <div className="anime-grid">
+          {titles.map((title) => (
+            <AnimeCard key={title} title={title} />
           ))}
         </div>
       )}

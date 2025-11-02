@@ -44,18 +44,6 @@ function Main({ darkMode }) {
         </section>
       )}
       {animeShown && <Anime genre={genre} animeShown={animeShown} />}
-
-      <div className="anime-grid">
-        <AnimeCard />
-        <AnimeCard />
-        <AnimeCard />
-        <AnimeCard />
-        <AnimeCard />
-        <AnimeCard />
-        <AnimeCard />
-        <AnimeCard />
-        <AnimeCard />
-      </div>
     </main>
   );
 }
