@@ -4,8 +4,7 @@ import axios from "axios";
 function Anime({ genre, animeShown }) {
   const [response, setResponse] = useState();
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(genre.join(", "));
+  const [titles, setTitle] = useState([]);
 
   useEffect(() => {
     if (animeShown) {
@@ -31,12 +30,19 @@ function Anime({ genre, animeShown }) {
       const text =
         res.data.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
       setResponse(text);
+
+      // Convert long text into an array of titles
+      const splitTitle = text.split(/\n|,/);
+
+      setTitle(splitTitle);
     } catch (err) {
       console.error("Gemini API error:", err);
       setResponse("Error fetching response");
     } finally {
       setIsLoading(false);
     }
+
+    console.log(titles.join(","));
   }
 
   return (
@@ -45,7 +51,7 @@ function Anime({ genre, animeShown }) {
         animes {genre.join(", ")} {animeShown}
       </p>
       <h2>Best Animes in these genre</h2>
-      <p>{isLoading ? "Loading..." : response} </p>
+      <p>{isLoading ? "Loading..." : titles.join(",")} </p>
     </section>
   );
 }
