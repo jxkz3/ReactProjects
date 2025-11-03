@@ -2,11 +2,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import AnimeCard from "./AnimeCard";
 
-function Anime({ genre, animeShown }) {
+function Anime({ genre, animeShown, animeSection }) {
   const [titles, setTitles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // Scroll to this section when Anime mounts (once)
+  useEffect(() => {
+    animeSection.current.scrollIntoView({ behavior: "smooth" });
+  }, [isLoading]);
+
+  // Fetch new anime titles each time "Get Animes" is toggled on
   useEffect(() => {
     if (animeShown) generateAnime();
   }, [animeShown]);
@@ -25,7 +31,6 @@ function Anime({ genre, animeShown }) {
       });
       const text = res.data.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
-      // Split titles neatly
       const splitTitles = text
         .split(/\n|,/)
         .map((t) => t.trim())
@@ -43,7 +48,11 @@ function Anime({ genre, animeShown }) {
   return (
     <section>
       <h2>Best Animes in these genres</h2>
-      {animeShown && <h3 className="genre-show">{genre.join(", ")}</h3>}
+      {animeShown && (
+        <h3 ref={animeSection} className="genre-show">
+          {genre.join(", ")}
+        </h3>
+      )}
 
       {isLoading ? (
         <p>Loading...</p>

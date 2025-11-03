@@ -1,11 +1,11 @@
 import List from "./List.jsx";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Anime from "./Anime.jsx";
-import AnimeCard from "./AnimeCard.jsx";
 
 function Main({ darkMode }) {
   const [genre, setGenre] = useState([]);
   const [animeShown, setAnimeShown] = useState(false);
+  const animeSection = useRef(null);
 
   function addGenre(e) {
     e.preventDefault();
@@ -24,7 +24,7 @@ function Main({ darkMode }) {
   return (
     <main style={styles}>
       <form className="genre-form" onSubmit={addGenre}>
-        <input type="text" placeholder="favourite Genre..." name="genre" />
+        <input type="text" placeholder="Favourite Genre..." name="genre" />
         <button type="submit">Add</button>
       </form>
 
@@ -34,16 +34,24 @@ function Main({ darkMode }) {
           <ul className="list-genre">
             <List best={genre} />
           </ul>
+
           {genre.length > 1 && (
             <div className="ready-genre">
               <h2>Ready for animes ?</h2>
-              <p>Genrate best animes for based on your favourite keywords</p>
+              <p>Generate best animes based on your favourite keywords</p>
               <button onClick={animeButton}>Get Animes</button>
             </div>
           )}
         </section>
       )}
-      {animeShown && <Anime genre={genre} animeShown={animeShown} />}
+
+      {animeShown && (
+        <Anime
+          genre={genre}
+          animeShown={animeShown}
+          animeSection={animeSection}
+        />
+      )}
     </main>
   );
 }
