@@ -7,6 +7,10 @@ import { nanoid } from "nanoid";
 function App() {
   const [dice, setDice] = useState(generateAllNewDice());
 
+  const gameWon =
+    dice.every((die) => die.isHeld) &&
+    dice.every((die) => die.value === dice[0].value);
+
   function generateAllNewDice() {
     return new Array(10).fill(0).map(() => ({
       value: Math.ceil(Math.random() * 6),
@@ -16,7 +20,16 @@ function App() {
   }
 
   function rollDice() {
-    setDice(generateAllNewDice);
+    setDice((prevDice) =>
+      prevDice.map((die) =>
+        die.isHeld
+          ? die
+          : {
+              ...die,
+              value: Math.ceil(Math.random() * 6),
+            }
+      )
+    );
   }
 
   function hold(id) {
@@ -41,7 +54,7 @@ function App() {
       <div className="dice-container">{diceElements}</div>
       <div>
         <button onClick={rollDice} className="roll-dice">
-          Roll
+          {gameWon ? "New game" : "Roll"}
         </button>
       </div>
     </main>
