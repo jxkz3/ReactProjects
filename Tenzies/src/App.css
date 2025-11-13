@@ -1,28 +1,36 @@
 body {
   margin: 0;
-  background-color: #0b2434;
+  background: linear-gradient(135deg, #0b132b, #1c2541, #3a506b);
   padding: 20px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Karla, sans-serif;
+  font-family: "Karla", "Poppins", sans-serif;
+  color: #f5f6fa;
 }
+
 button {
-  font-family: Karla, sans-serif;
-  font-size: 1px;
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 main {
-  background-color: aliceblue;
-  height: 367px;
+  background: linear-gradient(160deg, #5bc0be, #3a506b);
+  height: 370px;
   width: 370px;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+main:hover {
+  transform: scale(1.02);
 }
 
 div#root {
@@ -35,32 +43,56 @@ div#root {
 .dice-container {
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
-  gap: 20px;
+  gap: 18px;
 }
 
 .dice-container button {
-  height: 50px;
-  width: 50px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  height: 55px;
+  width: 55px;
   border-radius: 10px;
   border: none;
-  background-color: white;
-  font-family: Karla, sans-serif;
-  font-size: 1.75rem;
+  background: #f4f9ff;
+  color: #293241;
+  font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.dice-container button:hover {
+  background: #98c1d9;
+  color: white;
+  transform: translateY(-3px);
 }
 
 .roll-dice {
-  height: 50px;
-  width: 150px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  height: 55px;
+  min-width: 110px;
   border: none;
-  background-color: rgb(204, 0, 255);
-  font-size: 1.7rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff006e, #fb5607);
+  box-shadow: 0 4px 10px rgba(251, 86, 7, 0.5);
+  color: white;
+  font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
-  align-items: center;
-  color: aliceblue;
+  transition: all 0.25s ease;
+}
+
+.roll-dice:hover {
+  background: linear-gradient(135deg, #ffbe0b, #fb5607);
+  transform: translateY(-2px);
+}
+
+h1 {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  font-size: 2rem;
+  color: #f5f6fa;
+}
+
+p {
+  margin-top: 1px;
+  color: #e0fbfc;
 }

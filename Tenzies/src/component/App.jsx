@@ -3,6 +3,7 @@ import "../App.css";
 import Die from "./Die";
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import Confetti from "react-confetti";
 
 function App() {
   const [dice, setDice] = useState(generateAllNewDice());
@@ -51,6 +52,10 @@ function App() {
 
   return (
     <main>
+      {gameWon && <Confetti />}
+      <h1>Tenzies</h1>
+      <p>Roll until all dice match</p>
+
       <div className="dice-container">{diceElements}</div>
       <div>
         <button onClick={rollDice} className="roll-dice">
