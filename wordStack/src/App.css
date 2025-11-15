@@ -1,48 +1,69 @@
 body {
-  background-color: blueviolet;
-  color: aliceblue;
-  justify-content: center;
+  color: black;
+  align-items: center;
   display: flex;
+  background-color: #fff;
+  justify-content: center;
 }
+
 div {
-  border: 2px solid rgb(231, 167, 167);
-  border-radius: 30px;
-  justify-content: center;
+  border: 1px solid rgb(241, 168, 168);
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  width: 70px;
+  height: 40px;
+}
+
+/* ct - container*/
+
+.main-ct {
+  background-color: bisque;
+  width: 700px;
+  height: 800px;
   display: flex;
   flex-direction: column;
 }
 
-.main-layer {
-  background-color: #282726;
-  width: 594px;
-  height: 726px;
-  padding: 53px 73px;
-  gap: 36px;
+.head-ct {
+  width: 100%;
+  background-color: azure;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.second-layer {
-  width: 352px;
-  height: 144px;
-  background-color: rgb(12, 53, 90);
-  flex-direction: column;
-  gap: 20px;
+.status-ct {
+  background-color: rgb(168, 127, 255);
+  width: 400px;
+  height: 100px;
+  margin: 30px;
 }
 
-.third-layer {
-  background-color: rgb(41, 11, 59);
-  width: 352px;
-  height: 144px;
+.items-ct {
+  background-color: beige;
+  width: 450px;
+  height: 160px;
+  margin: 10px 1px;
 }
 
-.third-layer button {
-  background-color: blue;
-  height: 25px;
-  width: 70px;
+.word-ct {
+  background-color: rgb(179, 179, 232);
+  width: 400px;
+  height: 300px;
+  margin: 40px;
 }
 
 .keyboard-ct {
-  color: yellow;
-  height: 205px;
-  width: 700px;
+  width: 70%;
+  height: 400px;
+  background-color: black;
+}
+
+.keyboard-ct button {
+  width: 40px;
+  height: 40px;
 }
