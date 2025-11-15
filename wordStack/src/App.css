@@ -4,12 +4,14 @@ body {
   display: flex;
   background-color: #fff;
   justify-content: center;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
 }
 
 div {
   border: 1px solid rgb(241, 168, 168);
   align-items: center;
   text-align: center;
+  border-radius: 4px;
 }
 
 button {
@@ -45,25 +47,61 @@ button {
 
 .items-ct {
   background-color: beige;
-  width: 450px;
-  height: 160px;
-  margin: 10px 1px;
+  width: 500px;
+  height: 100px;
+  justify-content: center;
+  margin: 10px 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lang-btn {
+  padding: 0 12px;
+  min-width: 60px;
+  height: 40px;
+  width: auto;
+
+  border-radius: 4px;
 }
 
 .word-ct {
   background-color: rgb(179, 179, 232);
-  width: 400px;
-  height: 300px;
-  margin: 40px;
+  width: auto;
+  height: auto;
+  display: flex;
+  margin: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter {
+  width: 40px;
+  height: 40px;
+  flex-direction: row;
+
+  justify-content: center;
+  padding: 10px 10px;
+  display: flex;
+  font-size: 23px;
+  font-weight: bold;
+  background-color: #323232;
+  color: #fff;
 }
 
 .keyboard-ct {
-  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
   height: 400px;
+
   background-color: black;
+  justify-content: center;
+  gap: 5px;
 }
 
-.keyboard-ct button {
-  width: 40px;
-  height: 40px;
+.keyboard-btn {
+  width: 45px;
+  height: 45px;
 }
