@@ -11,8 +11,8 @@ A simple React project where the player guesses letters to build the correct wor
 
 ## Run the Project
 
-npm install
-npm run dev
+`npm install`
+`npm run dev `
 
 ## Tech Stack
 
