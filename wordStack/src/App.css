@@ -104,4 +104,8 @@ button {
 .keyboard-btn {
   width: 45px;
   height: 45px;
+  font-size: 23px;
+  font-weight: bold;
+  background-color: yellow;
+  border: 1px solid red;
 }
