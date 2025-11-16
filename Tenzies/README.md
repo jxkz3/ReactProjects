@@ -11,6 +11,7 @@ A simple React version of the classic Tenzies game. Roll the dice until all numb
 ## Run the Project
 
 `npm install`
+`npm install --save clsx`
 `npm run dev`
 
 ## Tech Stack
