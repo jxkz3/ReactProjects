@@ -4,13 +4,19 @@ import { languages } from "./languages.js";
 import { clsx } from "clsx";
 
 function App() {
-  const [currentWord, setCurrentWords] = useState("abcdef");
+  const [currentWord, setCurrentWords] = useState("abcdefh");
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const [guessLetter, setGuessLetter] = useState([]);
 
   const wrongGuess = guessLetter.filter((l) => !currentWord.includes(l)).length;
 
-  console.log(wrongGuess);
+  const correctGuess = guessLetter.filter((l) =>
+    currentWord.includes(l)
+  ).length;
+
+  const isGameOver = !(wrongGuess < 9);
+  const isGameWon = correctGuess === currentWord.length;
+
   function addGuess(alph) {
     setGuessLetter((prev) => {
       if (prev.includes(alph)) return prev;
@@ -70,12 +76,26 @@ function App() {
           Guess the word under 7 attemepts to keep the programming community
           alive
         </p>
-        <div className="status-ct">
-          <h1>You won</h1> <p> welldone </p>
-        </div>
+        {(isGameOver || isGameWon) && (
+          <div className="status-ct">
+            {isGameOver && (
+              <>
+                <h1>GameOver</h1>
+                <p>Try again</p>
+              </>
+            )}
+
+            {isGameWon && (
+              <>
+                <h1>Game Won</h1>
+                <p>Welldone</p>
+              </>
+            )}
+          </div>
+        )}
       </div>
       <div>
-        <h1> items </h1>
+        <h1> Items </h1>
         <div className="items-ct">{items}</div>
       </div>
       <div className="word-ct">{lettersElements}</div>
