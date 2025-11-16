@@ -1,49 +1,67 @@
 import { useState } from "react";
 import "./App.css";
 import { languages } from "./languages.js";
+import { clsx } from "clsx";
 
 function App() {
-  const [words, setWords] = useState("jasik MJ");
+  const [currentWord, setCurrentWords] = useState("abcdef");
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const [guessLetter, setGuessLetter] = useState([]);
 
-  function guess(alph) {
+  const wrongGuess = guessLetter.filter((l) => !currentWord.includes(l)).length;
+
+  console.log(wrongGuess);
+  function addGuess(alph) {
     setGuessLetter((prev) => {
       if (prev.includes(alph)) return prev;
       return [...prev, alph];
     });
   }
-  console.log(guessLetter);
 
-  const letters = words.split("").map((letter, id) => {
+  const lettersElements = currentWord.split("").map((letter, index) => {
     return (
-      <div className="letter" key={id}>
-        {letter.toUpperCase()}
+      <div className="letter" key={index}>
+        {guessLetter.includes(letter) ? letter.toUpperCase() : ""}
       </div>
     );
   });
 
-  const keyBoard = alphabet.split("").map((alph, index) => {
-    return (
-      <button onClick={() => guess(alph)} className="keyboard-btn" key={index}>
-        {alph.toUpperCase()}
-      </button>
-    );
-  });
+  const items = languages.map((lang, index) => {
+    const isLost = index < wrongGuess;
 
-  const items = languages.map((lang) => {
+    const className = clsx("chip", isLost && "lost");
+
     const styles = {
       backgroundColor: lang.backgroundColor,
       color: lang.color,
     };
 
     return (
-      <div className="lang-btn" key={lang.name} style={styles}>
+      <div className={className} key={index} style={styles}>
         {lang.name}
       </div>
     );
   });
 
+  const keyBoardElements = alphabet.split("").map((alph, i) => {
+    const isGuessed = guessLetter.includes(alph);
+    const isCorrect = isGuessed && currentWord.includes(alph);
+    const isWrong = isGuessed && !currentWord.includes(alph);
+    const className = clsx({
+      wrong: isWrong,
+      correct: isCorrect,
+    });
+
+    return (
+      <button
+        onClick={() => addGuess(alph)}
+        className={`keyboard ${className}`}
+        key={i}
+      >
+        {alph.toUpperCase()}
+      </button>
+    );
+  });
   return (
     <div className="main-ct">
       <div className="head-ct">
@@ -53,15 +71,15 @@ function App() {
           alive
         </p>
         <div className="status-ct">
-          <h1>You won</h1> <p> welldon </p>
+          <h1>You won</h1> <p> welldone </p>
         </div>
       </div>
       <div>
         <h1> items </h1>
         <div className="items-ct">{items}</div>
       </div>
-      <div className="word-ct">{letters}</div>
-      <div className="keyboard-ct">{keyBoard}</div>
+      <div className="word-ct">{lettersElements}</div>
+      <div className="keyboard-ct">{keyBoardElements}</div>
     </div>
   );
 }
