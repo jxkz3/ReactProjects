@@ -4,18 +4,20 @@ import { languages } from "./languages.js";
 import { clsx } from "clsx";
 
 function App() {
-  const [currentWord, setCurrentWords] = useState("abcdefh");
+  const [currentWord, setCurrentWords] = useState("acd");
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const [guessLetter, setGuessLetter] = useState([]);
 
   const wrongGuess = guessLetter.filter((l) => !currentWord.includes(l)).length;
 
-  const correctGuess = guessLetter.filter((l) =>
-    currentWord.includes(l)
-  ).length;
+  const correctGuess = currentWord
+    .split("")
+    .every((l) => guessLetter.includes(l));
 
-  const isGameOver = !(wrongGuess < 9);
-  const isGameWon = correctGuess === currentWord.length;
+  const wordLength = languages.length;
+  const isGameLost = !(wrongGuess < wordLength);
+  const isGameWon = correctGuess;
+  const isGameOver = isGameLost || isGameWon;
 
   function addGuess(alph) {
     setGuessLetter((prev) => {
@@ -68,6 +70,12 @@ function App() {
       </button>
     );
   });
+
+  const gameStatusClass = clsx("game-status", {
+    fail: isGameLost,
+    won: isGameWon,
+  });
+
   return (
     <div className="main-ct">
       <div className="head-ct">
@@ -76,16 +84,17 @@ function App() {
           Guess the word under 7 attemepts to keep the programming community
           alive
         </p>
-        {(isGameOver || isGameWon) && (
-          <div className="status-ct">
-            {isGameOver && (
+        {isGameOver && (
+          <div className={gameStatusClass}>
+            {isGameLost ? (
               <>
                 <h1>GameOver</h1>
-                <p>Try again</p>
+                <p>
+                  Guess the word within 8 attempts to keep the programming world
+                  safe from Assembly!
+                </p>
               </>
-            )}
-
-            {isGameWon && (
+            ) : (
               <>
                 <h1>Game Won</h1>
                 <p>Welldone</p>
@@ -100,6 +109,7 @@ function App() {
       </div>
       <div className="word-ct">{lettersElements}</div>
       <div className="keyboard-ct">{keyBoardElements}</div>
+      {isGameOver && <button className="new-btn">New Game</button>}
     </div>
   );
 }
