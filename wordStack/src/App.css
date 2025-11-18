@@ -132,6 +132,7 @@ button {
 }
 
 .keyboard {
+  border-radius: 5px;
   width: 45px;
   height: 45px;
   font-size: 23px;
@@ -140,6 +141,11 @@ button {
   border: 1px solid #1414ff;
   color: #000000;
   cursor: pointer;
+}
+
+.keyboard:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .wrong {

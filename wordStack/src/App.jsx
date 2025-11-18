@@ -73,7 +73,12 @@ function App() {
     });
 
     return (
-      <button onClick={() => addGuess(alph)} className={className} key={i}>
+      <button
+        onClick={() => addGuess(alph)}
+        disabled={isGameOver}
+        className={className}
+        key={i}
+      >
         {alph.toUpperCase()}
       </button>
     );
