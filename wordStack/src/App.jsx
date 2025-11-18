@@ -3,6 +3,7 @@ import "./App.css";
 import { languages } from "./languages.js";
 import { clsx } from "clsx";
 import { getFarewellText, getRandomWord } from "./fare.js";
+import Confetti from "react-confetti";
 
 function App() {
   const [currentWord, setCurrentWords] = useState(getRandomWord());
@@ -36,7 +37,10 @@ function App() {
   const lettersElements = currentWord.split("").map((letter, index) => {
     return (
       <div className="letter" key={index}>
-        {guessLetter.includes(letter) ? letter.toUpperCase() : ""}
+        {!isGameLost && guessLetter.includes(letter)
+          ? letter.toUpperCase()
+          : ""}
+        {isGameLost && letter.toUpperCase()}
       </div>
     );
   });
@@ -99,11 +103,12 @@ function App() {
 
   return (
     <div className="main-ct">
+      {isGameWon && <Confetti recycle={false} numberOfPieces={1000} />}
       <div className="head-ct">
         <h1>Word Stack Game</h1>
         <p>
-          Guess the word under 7 attempts to keep the programming community
-          alive
+          Guess the word within 8 attempts to keep the programming world safe
+          from Assembly!
         </p>
 
         {isWrongWord && wrongGuess > 0 && (
@@ -117,10 +122,7 @@ function App() {
             {isGameLost ? (
               <>
                 <h1>Game Over</h1>
-                <p>
-                  Guess the word within 8 attempts to keep the programming world
-                  safe from Assembly!
-                </p>
+                <p>Try Again my friend</p>
               </>
             ) : (
               <>
@@ -131,15 +133,12 @@ function App() {
           </div>
         )}
       </div>
-
       <div>
         <h1>Items</h1>
         <div className="items-ct">{items}</div>
       </div>
-
       <div className="word-ct">{lettersElements}</div>
       <div className="keyboard-ct">{keyBoardElements}</div>
-
       {isGameOver && (
         <button className="new-btn" onClick={() => startNewGame()}>
           New Game
