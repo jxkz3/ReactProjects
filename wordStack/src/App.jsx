@@ -2,10 +2,10 @@ import { useState } from "react";
 import "./App.css";
 import { languages } from "./languages.js";
 import { clsx } from "clsx";
-import { getFarewellText } from "./fare.js";
+import { getFarewellText, getRandomWord } from "./fare.js";
 
 function App() {
-  const [currentWord, setCurrentWords] = useState("acd");
+  const [currentWord, setCurrentWords] = useState(getRandomWord());
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const [guessLetter, setGuessLetter] = useState([]);
 
@@ -90,6 +90,13 @@ function App() {
     won: isGameWon,
   });
 
+  // New GAME
+
+  function startNewGame() {
+    setCurrentWords(getRandomWord());
+    setGuessLetter([]);
+  }
+
   return (
     <div className="main-ct">
       <div className="head-ct">
@@ -133,7 +140,11 @@ function App() {
       <div className="word-ct">{lettersElements}</div>
       <div className="keyboard-ct">{keyBoardElements}</div>
 
-      {isGameOver && <button className="new-btn">New Game</button>}
+      {isGameOver && (
+        <button className="new-btn" onClick={() => startNewGame()}>
+          New Game
+        </button>
+      )}
     </div>
   );
 }
