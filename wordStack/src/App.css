@@ -43,6 +43,13 @@ button {
   align-items: center;
 }
 
+.fare-ct {
+  background-color: #000000;
+  width: auto;
+  min-width: 100px;
+  color: rebeccapurple;
+}
+
 .game-status {
   width: 400px;
   height: auto;
