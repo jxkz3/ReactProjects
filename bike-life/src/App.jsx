@@ -9,7 +9,9 @@ function App() {
     <>
       <BrowserRouter>
         <nav>
-          <Link to="/">Home</Link>
+          <Link className="site-logo" to="/">
+            Home
+          </Link>
           <Link to="/about">About</Link>
         </nav>
         <Routes>
