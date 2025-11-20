@@ -10,7 +10,7 @@ export default function Home() {
           Add adveneture to the life by joining Bike life rent the perfect bike
           without any scamm
         </p>
-        <Link to="van">Find your bike</Link>
+        <Link to="bikes">Find your bike</Link>
       </div>
     </>
   );

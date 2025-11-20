@@ -15,7 +15,7 @@ function About() {
       <div className="about-page-cta">
         <h5>Your desitination is waiting , Your bike is ready</h5>
         <button>explore our bikes</button>
-        <Link to="/van"></Link>
+        <Link to="/Bikes"></Link>
       </div>
     </div>
   );

@@ -3,20 +3,25 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import Bikes from "./pages/Bikes";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <nav>
+        <header>
           <Link className="site-logo" to="/">
             Home
           </Link>
-          <Link to="/about">About</Link>
-        </nav>
+          <nav>
+            <Link to="/vans">Vans</Link>
+            <Link to="/about">About</Link>
+          </nav>
+        </header>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/bikes" element={<Bikes />} />
         </Routes>
       </BrowserRouter>
     </>
