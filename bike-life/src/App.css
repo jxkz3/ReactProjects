@@ -108,13 +108,17 @@ header a:hover {
 
 /*ABOUT PAGE */
 .about-hero-image {
-  max-width: 100%;
+  max-width: 500px;
+  height: 500px;
+  background-repeat: repeat-x;
+  background-size: auto; /* optional */
 }
 
 .about-page-content {
   padding-inline: 23px;
   color: #161616;
   margin-bottom: 55px;
+  display: wrap;
 }
 
 .about-page-content h1 {
@@ -139,7 +143,7 @@ header a:hover {
   padding-block: 37px;
 }
 
-.about-page-cta .link-button {
+.about-page-cta .link-btn {
   background-color: #161616;
   color: white;
   border-radius: 10px;

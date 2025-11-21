@@ -14,7 +14,7 @@ function App() {
             Home
           </Link>
           <nav>
-            <Link to="/vans">Vans</Link>
+            <Link to="/bikes">Bikes</Link>
             <Link to="/about">About</Link>
           </nav>
         </header>
