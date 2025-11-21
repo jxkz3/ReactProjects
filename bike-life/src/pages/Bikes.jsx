@@ -1,3 +1,14 @@
+import { useEffect, useState } from "react";
+import { bikes } from "../server";
+
 export default function Bikes() {
-  return <h1> THEESE IS Bikles</h1>;
+  const bikeElements = bikes.map((bike) => (
+    <div key={bike.id}>
+      <img src={bike.imageUrl}></img>
+      <h2>{bike.name}</h2>
+      <p>₹{bike.price}</p>
+    </div>
+  ));
+
+  return <div>{bikeElements}</div>;
 }
