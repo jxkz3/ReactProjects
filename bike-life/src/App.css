@@ -2,6 +2,12 @@
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: green;
+}
 
 div {
   display: flex;
@@ -240,4 +246,25 @@ header a:active {
 
 .bike-btn:hover {
   transform: translateY(-5px);
+}
+
+/* HOST PAGE */
+
+.host-link {
+  color: #4d4d4d;
+  font-size: medium;
+  text-decoration: none;
+}
+
+.host-link.active {
+  color: red;
+}
+
+.host-nav {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: start;
+  align-items: start;
 }
