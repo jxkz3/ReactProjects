@@ -8,6 +8,7 @@ div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 html,
@@ -32,6 +33,12 @@ header {
   display: flex;
   align-items: center;
   padding-block: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  padding-right: 10%;
 }
 
 header .site-logo {
@@ -39,7 +46,8 @@ header .site-logo {
   margin-right: auto;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 25px;
+  font-size: 35px;
+  padding-left: 10%;
 }
 
 header a {
@@ -51,7 +59,10 @@ header a {
 
 header a:hover {
   color: #161616;
-  text-decoration: underline;
+  text-decoration: solid;
+}
+header a:active {
+  color: #c02828;
 }
 
 .link-button {
@@ -82,6 +93,7 @@ header a:hover {
   min-height: 700px;
   color: white;
   padding: 45px 23px;
+  width: 100%;
 }
 
 .home-container h1 {
@@ -100,14 +112,18 @@ header a:hover {
   text-decoration: none;
   background-color: #ff8c38;
   border: none;
-  width: 30%;
+  width: 25%;
+  height: 60px;
   margin-top: 27px;
   padding-block: 0.75rem;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
+  font-size: 25px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .home-container a:hover {
@@ -161,16 +177,25 @@ header a:hover {
 .bike-ct {
   display: flex;
   flex-direction: row;
-  align-self: center;
+  align-items: center;
   justify-content: start;
-  width: 100%;
-  height: 100px;
-  gap: 100px;
+  width: 70%;
+  height: 150px;
+  gap: 290px;
   margin: 10px;
+  padding: 7px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.bike-ct img {
-  width: 100px;
+.bike-link-ct {
+  display: flex;
+  width: 30px;
+  height: 100%;
+}
+
+.bike-link-ct img {
+  width: 150px;
+  height: 100%;
 }
 
 /* BIKE DETAILS */
@@ -199,4 +224,20 @@ header a:hover {
   width: 100%;
   height: 100%;
   object-fit: fill;
+}
+
+.bike-btn {
+  margin-top: 100px;
+  width: 200px;
+  height: 70px;
+  font-size: large;
+  font-weight: bolder;
+  background-color: #161616;
+  color: #fff7ed;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.bike-btn:hover {
+  transform: translateY(-5px);
 }
