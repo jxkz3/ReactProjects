@@ -24,7 +24,7 @@ export default function About() {
           Your Bike is ready.
         </h2>
         <Link className="link-btn" to="/bikes">
-          Explore our vans
+          Explore our Bikes
         </Link>
       </div>
     </div>

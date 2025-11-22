@@ -5,27 +5,19 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Bikes from "./pages/Bikes";
 import BikeDetails from "./pages/BikeDetails";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <header>
-          <Link className="site-logo" to="/">
-            Home
-          </Link>
-          <nav>
-            <Link to="/bikes">Bikes</Link>
-            <Link to="/about">About</Link>
-          </nav>
-        </header>
-        <Routes>
+      <Routes>
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/bikes" element={<Bikes />} />
           <Route path="/bikes/:id" element={<BikeDetails />} />
-        </Routes>
-      </BrowserRouter>
+        </Route>
+      </Routes>
     </>
   );
 }
