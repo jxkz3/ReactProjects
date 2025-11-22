@@ -23,11 +23,9 @@ export default function About() {
           <br />
           Your Bike is ready.
         </h2>
-        <Link className="link-btn" to="/bike">
+        <Link className="link-btn" to="/bikes">
           Explore our vans
         </Link>
-
-        <Link to="/bikes/2"> bike 1</Link>
       </div>
     </div>
   );
