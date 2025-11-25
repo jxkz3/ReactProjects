@@ -9,12 +9,17 @@ a:hover {
   color: green;
 }
 
+main {
+  min-height: 700px;
+}
+
 div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: auto;
 }
 
 html,
@@ -23,6 +28,9 @@ body {
   padding: 0;
   background-color: #fff7ed;
   font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -86,6 +94,11 @@ header a:active {
 
 .link-button:hover {
   transform: translate(1px, 1px);
+}
+
+/* HEAD LINK */
+.head-link.active {
+  color: blueviolet;
 }
 
 /* HOME PAGE */
@@ -185,7 +198,7 @@ header a:active {
   flex-direction: row;
   align-items: center;
   justify-content: start;
-  width: 70%;
+  width: 100%;
   height: 150px;
   gap: 290px;
   margin: 10px;
@@ -200,8 +213,9 @@ header a:active {
 }
 
 .bike-link-ct img {
-  width: 150px;
+  width: 250px;
   height: 100%;
+  border-radius: 10px;
 }
 
 /* BIKE DETAILS */
@@ -267,4 +281,15 @@ header a:active {
   gap: 100px;
   justify-content: start;
   align-items: start;
+}
+
+/* footer */
+
+.footer-ct {
+  background-color: black;
+  color: blueviolet;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 100px;
 }
