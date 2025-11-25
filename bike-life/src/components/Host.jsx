@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function Host() {
   return (
@@ -13,7 +13,7 @@ export default function Host() {
             Income
           </NavLink>
           <NavLink to="vans" className="host-link">
-            vans
+            Bikes
           </NavLink>
           <NavLink to="review" className="host-link">
             Review
