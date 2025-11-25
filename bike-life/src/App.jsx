@@ -10,6 +10,8 @@ import Income from "./pages/host/Income";
 import Review from "./pages/host/Review";
 import Host from "./components/Host";
 import DashBoard from "./pages/host/DashBoard";
+import HostVans from "./pages/host/HostVans";
+import HostVansDetails from "./pages/host/HostVansDetails";
 
 function App() {
   return (
@@ -21,9 +23,12 @@ function App() {
           <Route path="/bikes" element={<Bikes />} />
           <Route path="/bikes/:id" element={<BikeDetails />} />
           <Route path="/host" element={<Host />}>
+            <Route index element={<DashBoard />} />
+
             <Route path="income" element={<Income />} />
             <Route path="review" element={<Review />} />
-            <Route index element={<DashBoard />} />
+            <Route path="vans" element={<HostVans />} />
+            <Route path="vans/:id" element={<HostVansDetails />} />
           </Route>
         </Route>
       </Routes>

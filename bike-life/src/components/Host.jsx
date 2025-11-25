@@ -12,6 +12,9 @@ export default function Host() {
           <NavLink to="income" className="host-link">
             Income
           </NavLink>
+          <NavLink to="vans" className="host-link">
+            vans
+          </NavLink>
           <NavLink to="review" className="host-link">
             Review
           </NavLink>
