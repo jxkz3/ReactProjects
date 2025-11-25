@@ -9,7 +9,7 @@ function BikeDetails() {
   const bike = bikes.find((b) => b.id === id);
   if (bike) {
     return (
-      <div className="bike-dt-ct">
+      <div className="bike-detail-ct">
         <div className="dt-img-ct">
           <img src={bike.imageUrl}></img> <h1>{bike.name}</h1>
         </div>

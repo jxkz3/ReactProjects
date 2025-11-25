@@ -53,6 +53,7 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   width: 100%;
   padding-right: 10%;
+  margin-bottom: 30px;
 }
 
 header .site-logo {
@@ -196,19 +197,27 @@ header a:active {
 .bike-ct {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  gap: 20px;
   justify-content: start;
-  width: 100%;
-  height: 150px;
-  gap: 290px;
+  align-items: center;
   margin: 10px;
-  padding: 7px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #1616160c;
+  width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 11px 18px rgba(17, 44, 3, 0.3);
+  transform: translateX(0px);
+
+  transition: all 0.3s ease;
+}
+
+.bike-ct:hover {
+  box-shadow: 0 11px 18px rgba(34, 3, 44, 0.3);
+  transform: translateX(10px);
 }
 
 .bike-link-ct {
   display: flex;
-  width: 30px;
+  width: 300px;
   height: 100%;
 }
 
@@ -219,14 +228,14 @@ header a:active {
 }
 
 /* BIKE DETAILS */
-.bike-dt-ct {
+.bike-detail-ct {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.bike-dt-ct p {
+.bike-detail-ct p {
   text-align: center;
   width: 600px;
 }
@@ -306,9 +315,17 @@ header a:active {
   background-color: #1616160c;
   width: 500px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(8, 11, 75, 0.3);
+  box-shadow: 0 11px 18px rgba(17, 44, 3, 0.3);
+  transform: translateX(0px);
+
+  transition: all 0.3s ease;
 }
 
+.hostvan-ct:hover {
+  transform: translateX(-10px);
+
+  box-shadow: 0 13px 22px rgba(49, 4, 4, 0.45);
+}
 .hostvan-ct img {
   width: 100px;
   border-radius: 10px;
@@ -324,4 +341,20 @@ header a:active {
 
 .hostvan-link:hover {
   color: #161616;
+}
+
+.bike-detail-ct img {
+  width: 350px;
+  border-radius: 10px;
+}
+.bike-detail-ct h3 {
+  background-color: #161616;
+  color: white;
+  font-weight: 800;
+  width: 100px;
+  text-align: center;
+  border-radius: 4px;
+  justify-content: center;
+  min-height: 30px;
+  align-items: center;
 }
