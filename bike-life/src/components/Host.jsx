@@ -12,7 +12,7 @@ export default function Host() {
           <NavLink to="income" className="host-link">
             Income
           </NavLink>
-          <NavLink to="vans" className="host-link">
+          <NavLink to="bikes" className="host-link">
             Bikes
           </NavLink>
           <NavLink to="review" className="host-link">

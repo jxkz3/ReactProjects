@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { bikes } from "../../server";
 
-export default function HostVansDetails() {
+export default function HostBikesDetails() {
   const { id } = useParams();
 
   const bike = bikes.find((b) => b.id === id);
@@ -16,7 +16,7 @@ export default function HostVansDetails() {
 
   return (
     <>
-      <Link to="../vans" className="back-link">
+      <Link to="../bikes" className="back-link">
         &larr; <span>Back to all vans</span>
       </Link>
       <div className="bike-detail-ct">

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "../../server";
 import { bikes } from "../../server";
 
-export default function HostVans() {
+export default function HostBikes() {
   const myId = 123;
 
   const HostedVans = bikes.map((b) =>

@@ -5,23 +5,25 @@ import { Link } from "react-router-dom";
 export default function About() {
   return (
     <div className="about-page-container">
-      <img src={bgImg} className="about-hero-image" />
+      <img src={bgImg} alt="background" className="about-hero-image" />
+
       <div className="about-page-content">
-        <h1>Dont Waste money on scamms</h1>
+        <h1>Don’t waste money on scams</h1>
         <p>
-          Our mission is safe gaurd our customers from potenetiol scamm rentiing
-          become professional well mainteinded rental of bilke
+          Our mission is to safeguard customers from potential rental scams and
+          provide a trusted, well-maintained bike rental experience.
         </p>
         <p>
-          Our team is full of vanlife enthusiasts who know firsthand the magic
-          of touring the world on 4 wheels.
+          Our team consists of riding enthusiasts who understand the joy and
+          freedom of exploring the world on two wheels.
         </p>
       </div>
+
       <div className="about-page-cta">
         <h2>
           Your destination is waiting.
           <br />
-          Your Bike is ready.
+          Your bike is ready.
         </h2>
         <Link className="link-btn" to="/bikes">
           Explore our Bikes
