@@ -8,8 +8,10 @@ export default function Bikes() {
       <Link to={`/bikes/${bike.id}`} className="bike-link-ct">
         <img src={bike.imageUrl} />
       </Link>
-
-      <h2>{bike.name}</h2>
+      <div>
+        <h2>{bike.name}</h2>
+        <h3 className="bike-type-ct">{bike.type}</h3>
+      </div>
       <p>$ {bike.price}</p>
     </div>
   ));
