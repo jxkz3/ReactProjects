@@ -1,23 +1,30 @@
 import Projects from "./Projects";
+import SkillCard from "./SkillCard";
+import { Link } from "react-router-dom";
 
 export default function Content() {
   return (
-    <div>
-      <div>
-        <h1> Jasik Mj</h1>
-        <h2>Who am I </h2>
+    <div className="center-box">
+      <div className="main-container">
+        <h1>JASIK MJ</h1>
+        <h3>React Developer</h3>
+
         <p>
-          I am webdevA self-taught React developer skilled in building
-          responsive, interactive web applications with strong JavaScript
-          fundamentals. Experienced with React, API integration, debugging, and
-          backend basics using Node.js. Background in web security from bug
-          bounty work strengthens my secure-development approach and improves my
-          ability to understand complex technical concepts.
+          I work with React and build real-world projects to get better. I’ve
+          done security and bug hunting, so I pay attention to how things break.
+          I’m learning Node and Express to understand the backend properly and
+          become productive on both sides.
         </p>
+        <Link to="/about" className="about-link">
+          Learn more about me →
+        </Link>
       </div>
+      <h1> Projects</h1>
       <div>
         <Projects />
       </div>
+      <h1>Skills</h1>
+      <SkillCard />
 
       <div>Other details here</div>
     </div>
