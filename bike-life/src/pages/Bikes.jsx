@@ -16,5 +16,5 @@ export default function Bikes() {
     </div>
   ));
 
-  return <div>{bikeElements}</div>;
+  return <div className="bike-main-ct">{bikeElements}</div>;
 }

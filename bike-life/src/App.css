@@ -2,11 +2,17 @@
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+h1,
+h2,
+p {
+  color: #cfcfcf;
+}
 a {
   text-decoration: none;
 }
 a:hover {
-  color: green;
+  color: #ff6b6b;
 }
 
 main {
@@ -22,7 +28,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff7ed;
+  background-color: #0a192f;
   font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: column;
@@ -46,15 +52,15 @@ header {
   display: flex;
   flex-direction: row;
   gap: 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   width: 100%;
   padding-right: 10%;
-  background-color: #000000ed;
-  box-shadow: 0 1px 10px rgba(159, 4, 255, 0.382);
+  background-color: #112240;
+  box-shadow: 0 1px 15px rgba(100, 255, 218, 0.1);
 }
 
 header .site-logo {
-  color: rgb(240, 203, 255);
+  color: #64ffda;
   margin-right: auto;
   text-transform: uppercase;
   font-weight: 900;
@@ -64,17 +70,17 @@ header .site-logo {
 
 header a {
   text-decoration: none;
-  color: #4d4d4d;
+  color: #ccd6f6;
   font-weight: 600;
   padding: 5px 20px;
 }
 
 header a:hover {
-  color: #3e2f46;
+  color: #64ffda;
   text-decoration: solid;
 }
 header a:active {
-  color: #c02828;
+  color: #ff6b6b;
 }
 
 .link-button {
@@ -83,7 +89,7 @@ header a:active {
   text-decoration: none;
   border: none;
   padding: 0.75rem 1.375rem;
-  color: initial;
+  color: #ffffff;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
@@ -96,18 +102,22 @@ header a:active {
 
 /* HEAD LINK */
 .head-link.active {
-  color: blueviolet;
+  color: #64ffda;
 }
 
 /* HOME PAGE */
 .home-container {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+  background: linear-gradient(
+      0deg,
+      rgba(10, 25, 47, 0.9),
+      rgba(10, 25, 47, 0.9)
+    ),
     url("./assets/home-bg.jpg") no-repeat center center;
   background-size: cover;
   min-height: 120vh;
-  color: white;
+  color: #ccd6f6;
   width: 100%;
   align-items: center;
 }
@@ -126,13 +136,13 @@ header a:active {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  background-color: #ff8c38;
+  background-color: #64ffda;
   border: none;
   width: 25%;
   height: 60px;
   margin-top: 27px;
   padding-block: 0.75rem;
-  color: rgb(0, 0, 0);
+  color: #0a192f;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
@@ -147,6 +157,12 @@ header a:active {
 }
 
 /*ABOUT PAGE */
+.about-page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .about-hero-image {
   width: 100%;
   height: 380px;
@@ -159,7 +175,7 @@ header a:active {
 
 .about-page-content {
   padding: 0 23px;
-  color: #161616;
+  color: #ccd6f6;
   margin-bottom: 55px;
   max-width: 850px;
   line-height: 1.6;
@@ -179,12 +195,13 @@ header a:active {
 }
 
 .about-page-cta {
-  background-color: #ffcc8d;
-  color: #161616;
+  background-color: #112240;
+  color: #ccd6f6;
   padding: 30px 32px;
   border-radius: 10px;
   margin: 0 23px 60px 23px;
   max-width: 850px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .about-page-cta h2 {
@@ -195,8 +212,8 @@ header a:active {
 
 .about-page-cta .link-btn {
   display: inline-block;
-  background-color: #161616;
-  color: white;
+  background-color: #64ffda;
+  color: #0a192f;
   padding: 14px 24px;
   border-radius: 10px;
   font-size: 18px;
@@ -210,6 +227,13 @@ header a:active {
 }
 
 /* BIKES PAGE */
+.bike-main-ct {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
 .bike-ct {
   display: flex;
   flex-direction: row;
@@ -217,28 +241,29 @@ header a:active {
   justify-content: start;
   align-items: center;
   margin: 10px;
-  background-color: #1616160c;
+  background-color: #112240;
   width: 800px;
   border-radius: 10px;
-  box-shadow: 0 11px 18px rgba(17, 44, 3, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   transform: translateX(0px);
-
   transition: all 0.3s ease;
+  border: 1px solid #233554;
 }
 
 .bike-type-ct {
-  background-color: #300909;
+  background-color: #233554;
   justify-content: center;
   width: 70%;
   text-align: center;
   border-radius: 5px;
-  color: white;
+  color: #ccd6f6;
   min-height: 26px;
 }
 
 .bike-ct:hover {
-  box-shadow: 0 11px 18px rgba(34, 3, 44, 0.3);
+  box-shadow: 0 15px 35px rgba(100, 255, 218, 0.1);
   transform: translateX(10px);
+  border: 1px solid #64ffda;
 }
 
 .bike-link-ct {
@@ -287,32 +312,44 @@ header a:active {
   height: 70px;
   font-size: large;
   font-weight: bolder;
-  background-color: #161616;
-  color: #fff7ed;
+  background-color: #64ffda;
+  color: #0a192f;
   border-radius: 15px;
   transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
 }
 
 .bike-btn:hover {
   transform: translateY(-5px);
-  color: green;
+  color: #0a192f;
+  box-shadow: 0 10px 25px rgba(100, 255, 218, 0.5);
 }
 
 /* HOST PAGE */
+.host-ct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.host-head {
+  justify-content: center;
+}
 
 .host-link {
-  color: #4d4d4d;
+  color: #ccd6f6;
   font-size: medium;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 .host-link:hover {
-  color: #8d0488;
+  color: #64ffda;
   transform: translateY(-1px);
 }
 
 .host-link.active {
-  color: red;
+  color: #ff6b6b;
 }
 
 .host-nav {
@@ -327,12 +364,13 @@ header a:active {
 /* footer */
 
 .footer-ct {
-  background-color: black;
-  color: rgb(151, 138, 166);
+  background-color: #0a192f;
+  color: #8892b0;
   width: 100%;
   text-align: center;
   padding: 20px 0;
   margin-top: 100px;
+  border-top: 1px solid #233554;
 }
 
 /* Inside host bike  */
@@ -344,19 +382,19 @@ header a:active {
   justify-content: start;
   align-items: center;
   margin: 10px;
-  background-color: #1616160c;
+  background-color: #112240;
   width: 500px;
   border-radius: 10px;
-  box-shadow: 0 11px 18px rgba(17, 44, 3, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   transform: translateX(0px);
-
   transition: all 0.3s ease;
+  border: 1px solid #233554;
 }
 
 .hostvan-ct:hover {
   transform: translateX(-10px);
-
-  box-shadow: 0 13px 22px rgba(49, 4, 4, 0.45);
+  box-shadow: 0 15px 35px rgba(100, 255, 218, 0.15);
+  border: 1px solid #64ffda;
 }
 .hostvan-ct img {
   width: 100px;
@@ -368,11 +406,11 @@ header a:active {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  color: #161616b0;
+  color: #ccd6f6;
 }
 
 .hostvan-link:hover {
-  color: rgb(25, 4, 27);
+  color: #64ffda;
 }
 
 .bike-detail-ct img {
@@ -380,8 +418,8 @@ header a:active {
   border-radius: 10px;
 }
 .bike-detail-ct h3 {
-  background-color: #161616;
-  color: white;
+  background-color: #233554;
+  color: #ccd6f6;
   font-weight: 800;
   width: 100px;
   text-align: center;
@@ -424,20 +462,21 @@ header a:active {
 }
 
 .host-nav {
-  background-color: #edb8e329;
+  background-color: #112240;
   height: 30px;
   align-items: center;
   padding-left: 30px;
-  box-shadow: 0 4px 12px rgba(75, 6, 6, 0.367);
-  color: #161616;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: #ccd6f6;
+  border-bottom: 1px solid #233554;
 }
 
 .host-nav a {
-  color: #161616;
+  color: #ccd6f6;
 }
 
 .host-nav a.active {
-  color: #e60f0f;
+  color: #ff6b6b;
 }
 
 .back-link {

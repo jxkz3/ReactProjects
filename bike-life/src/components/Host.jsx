@@ -3,8 +3,8 @@ import { NavLink, Outlet } from "react-router-dom";
 export default function Host() {
   return (
     <>
-      <div>
-        <h1>Host Page</h1>
+      <div className="host-ct">
+        <h1 className="host-head">Host Page</h1>
         <nav className="host-nav">
           <NavLink to="" end className="host-link">
             DashBoard
