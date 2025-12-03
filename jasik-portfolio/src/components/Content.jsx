@@ -16,9 +16,9 @@ export default function Content() {
         </p>
       </div>
       <div>
-        <h1>projects goes here</h1>
         <Projects />
       </div>
+
       <div>Other details here</div>
     </div>
   );
