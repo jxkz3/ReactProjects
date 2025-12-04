@@ -1,7 +1,10 @@
+import ProjectsCard from "../components/ProjectsCard";
+
 export default function ProjectPage() {
   return (
-    <div>
-      <h1>Project Page goes here details</h1>
+    <div className="page-ct">
+      <h1>Projects</h1>
+      <ProjectsCard />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import Projects from "./Projects";
+import ProjectsCard from "./ProjectsCard";
 import SkillCard from "./SkillCard";
 import { Link } from "react-router-dom";
 
@@ -19,9 +19,10 @@ export default function Content() {
           Learn more about me →
         </Link>
       </div>
-      <h1> Projects</h1>
-      <div>
-        <Projects />
+      <div className="page-ct">
+        <h1> Projects</h1>
+
+        <ProjectsCard />
       </div>
       <h1>Skills</h1>
       <SkillCard />
