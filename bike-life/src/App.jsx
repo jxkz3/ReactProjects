@@ -9,7 +9,7 @@ import BikeDetails from "./pages/BikeDetails";
 import Layout from "./components/Layout";
 import Income from "./pages/host/Income";
 import Review from "./pages/host/Review";
-import Host from "./components/Host";
+import Host from "./pages/Host";
 import DashBoard from "./pages/host/DashBoard";
 
 import Pricing from "./pages/host/details/Pricing";
