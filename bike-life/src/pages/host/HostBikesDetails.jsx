@@ -17,7 +17,7 @@ export default function HostBikesDetails() {
   return (
     <>
       <Link to="../bikes" className="back-link">
-        &larr; <span>Back to all vans</span>
+        <span> &larr; Back to all Bikes</span>
       </Link>
       <div className="bike-detail-ct">
         <h1>{bike.name}</h1>

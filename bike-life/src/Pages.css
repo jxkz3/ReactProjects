@@ -258,6 +258,7 @@
 .search-type-ct button {
   background-color: #000000;
   cursor: pointer;
+  color: #cccccc;
 
   width: 100px;
   height: 30px;

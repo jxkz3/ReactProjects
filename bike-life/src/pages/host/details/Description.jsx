@@ -1,7 +1,7 @@
 export default function Description() {
   return (
     <>
-      <h1> bike descrition upload soon</h1>
+      <h1> bike Description upload soon</h1>
     </>
   );
 }
