@@ -1,12 +1,17 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { bikes } from "../server";
 
 function BikeDetails() {
   const { id } = useParams();
+  const location = useLocation();
+  console.log(location);
 
   const navigate = useNavigate();
 
   const bike = bikes.find((b) => b.id === id);
+
+  const search = location.state.search;
+
   if (bike) {
     return (
       <div className="bike-detail-ct">
@@ -18,7 +23,10 @@ function BikeDetails() {
         </p>
 
         <div>
-          <button className="bike-btn" onClick={() => navigate("/bikes")}>
+          <button
+            className="bike-btn"
+            onClick={() => navigate(`./..${search}`)}
+          >
             Back to Bikes
           </button>
         </div>

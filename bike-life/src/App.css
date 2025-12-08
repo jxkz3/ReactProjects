@@ -207,7 +207,7 @@ header a:active {
 }
 
 /* Inside host bike */
-.hostvan-ct {
+.hostbike-ct {
   display: flex;
   flex-direction: row;
   gap: 25px;
@@ -225,14 +225,14 @@ header a:active {
   padding: 20px;
 }
 
-.hostvan-ct:hover {
+.hostbike-ct:hover {
   transform: translateX(-10px) scale(1.02);
   box-shadow: 0 15px 40px rgba(108, 99, 255, 0.2);
   border: 1px solid rgba(108, 99, 255, 0.4);
   background: rgba(255, 255, 255, 0.08);
 }
 
-.hostvan-ct img {
+.hostbike-ct img {
   width: 120px;
   height: 120px;
   border-radius: 12px;
@@ -240,7 +240,7 @@ header a:active {
   border: 2px solid rgba(108, 99, 255, 0.3);
 }
 
-.hostvan-link {
+.hostbike-link {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -249,7 +249,7 @@ header a:active {
   gap: 10px;
 }
 
-.hostvan-link:hover {
+.hostbike-link:hover {
   color: #6c63ff;
 }
 

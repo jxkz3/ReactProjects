@@ -17,12 +17,14 @@ import Description from "./pages/host/details/description";
 import Photos from "./pages/host/details/Photos";
 import HostBikesDetails from "./pages/host/HostBikesDetails";
 import HostBikes from "./pages/host/HostBikes";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
     <>
       <Routes>
         <Route element={<Layout />}>
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/bikes" element={<Bikes />} />

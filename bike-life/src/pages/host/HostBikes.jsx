@@ -7,8 +7,8 @@ export default function HostBikes() {
 
   const HostedVans = bikes.map((b) =>
     b.hostId === myId ? (
-      <NavLink to={b.id} className="hostvan-link">
-        <div className="hostvan-ct">
+      <NavLink to={b.id} className="hostbike-link">
+        <div className="hostbike-ct">
           <img src={b.imageUrl}></img>
           <h2> {b.name} </h2>
 
@@ -20,7 +20,7 @@ export default function HostBikes() {
 
   return (
     <>
-      <h1>Host vans page</h1>
+      <h2>Host bike page</h2>
       <div>{HostedVans} </div>
     </>
   );

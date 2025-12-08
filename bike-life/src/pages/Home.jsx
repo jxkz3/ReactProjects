@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <>
       <div className="home-container">
-        <h1> You got the travle plan go to bike life</h1>
+        <h1> You’ve got the travel plan — now ride with BikeLife</h1>
         <p>
-          Add adveneture to the life by joining Bike life rent the perfect bike
-          without any scamm
+          Add adventure to your life by joining BikeLife. Rent the perfect bike
+          with zero hassle or scams.
         </p>
         <Link to="bikes">Find your bike</Link>
       </div>

@@ -8,14 +8,14 @@ export default function About() {
       <img src={bgImg} alt="background" className="about-hero-image" />
 
       <div className="about-page-content">
-        <h1>Don’t waste money on scams</h1>
+        <h1>Don’t lose money to rental scams.</h1>
         <p>
-          Our mission is to safeguard customers from potential rental scams and
-          provide a trusted, well-maintained bike rental experience.
+          Our mission is to protect riders from unreliable rentals and make sure
+          every bike you get is safe, inspected, and ready for the road.
         </p>
         <p>
-          Our team consists of riding enthusiasts who understand the joy and
-          freedom of exploring the world on two wheels.
+          We’re a team of riders who know the thrill of exploring new places on
+          two wheels. That’s why we built a service we’d trust ourselves.
         </p>
       </div>
 
@@ -26,7 +26,7 @@ export default function About() {
           Your bike is ready.
         </h2>
         <Link className="link-btn" to="/bikes">
-          Explore our Bikes
+          Explore Our Bikes
         </Link>
       </div>
     </div>

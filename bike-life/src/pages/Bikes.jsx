@@ -8,8 +8,17 @@ export default function Bikes() {
 
   const typeFilter = searchParam.get("type");
 
-  const bikeElements = bikes.map((bike) => (
-    <Link to={`/bikes/${bike.id}`} key={bike.id} className="bike-link-ct">
+  const filterBike = typeFilter
+    ? bikes.filter((bike) => bike.type === typeFilter)
+    : bikes;
+
+  const bikeElements = filterBike.map((bike) => (
+    <Link
+      to={bike.id}
+      key={bike.id}
+      className="bike-link-ct"
+      state={{ search: `?${searchParam.toString()}` }}
+    >
       <div className="bike-ct">
         <div className="bike-img-container">
           <img src={bike.imageUrl} alt={bike.name} />
@@ -30,16 +39,27 @@ export default function Bikes() {
   return (
     <div>
       <div className="search-type-ct">
-        <button onClick={() => setSearchParam({ type: "rugged" })}>
+        <button
+          className={typeFilter === "rugged" ? "active-filter " : ""}
+          onClick={() => setSearchParam({ type: "rugged" })}
+        >
           rugged
         </button>
-        <button onClick={() => setSearchParam({ tyspe: "luxry" })}>
-          luxry
+        <button
+          className={typeFilter === "luxury" ? "active-filter " : ""}
+          onClick={() => setSearchParam({ type: "luxury" })}
+        >
+          luxury
         </button>
-        <button onClick={() => setSearchParam({ type: "simple" })}>
+        <button
+          className={typeFilter === "simple" ? "active-filter " : ""}
+          onClick={() => setSearchParam({ type: "simple" })}
+        >
           simple
         </button>
-        <button onClick={() => setSearchParam({})}>clear</button>
+        {typeFilter ? (
+          <button onClick={() => setSearchParam({})}>clear</button>
+        ) : null}
       </div>
 
       <div className="bike-main-ct">{bikeElements}</div>
