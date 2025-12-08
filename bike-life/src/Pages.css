@@ -77,19 +77,6 @@
   padding: 60px 20px;
 }
 
-.about-hero-image {
-  width: 100%;
-  max-width: 1200px;
-  height: 400px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  margin-bottom: 50px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(108, 99, 255, 0.3);
-}
-
 .about-page-content {
   padding: 0 20px;
   color: #e0e0e0;
@@ -110,8 +97,10 @@
 .about-page-content p {
   font-size: 18px;
   margin-bottom: 25px;
+  width: 100%;
   line-height: 1.8;
   color: #cccccc;
+  text-align: center;
 }
 
 .about-page-cta {

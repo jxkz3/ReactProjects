@@ -40,22 +40,22 @@ export default function Bikes() {
     <div>
       <div className="search-type-ct">
         <button
-          className={typeFilter === "rugged" ? "active-filter " : ""}
-          onClick={() => setSearchParam({ type: "rugged" })}
+          className={typeFilter === "adventure" ? "active-filter " : ""}
+          onClick={() => setSearchParam({ type: "adventure" })}
         >
-          rugged
+          adventure
         </button>
         <button
-          className={typeFilter === "luxury" ? "active-filter " : ""}
-          onClick={() => setSearchParam({ type: "luxury" })}
+          className={typeFilter === "cruiser" ? "active-filter " : ""}
+          onClick={() => setSearchParam({ type: "cruiser" })}
         >
-          luxury
+          cruiser
         </button>
         <button
-          className={typeFilter === "simple" ? "active-filter " : ""}
-          onClick={() => setSearchParam({ type: "simple" })}
+          className={typeFilter === "sport" ? "active-filter " : ""}
+          onClick={() => setSearchParam({ type: "sport" })}
         >
-          simple
+          sport
         </button>
         {typeFilter ? (
           <button onClick={() => setSearchParam({})}>clear</button>

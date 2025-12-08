@@ -1,68 +1,89 @@
 export const bikes = [
   {
     id: "1",
-    name: "ThunderRide 350",
+    name: "Royal Enfield Classic",
     price: 120,
     description:
-      "ThunderRide 350 is built for long-distance highway cruising. Strong torque, wide seating, and stable handling make it perfect for Kerala–Goa rides or mountain routes.",
+      "A classic thumper perfect for relaxed city cruising and scenic weekend rides.",
     imageUrl:
-      "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
-    type: "simple",
+      "https://images.pexels.com/photos/10155606/pexels-photo-10155606.jpeg",
+    type: "cruiser",
     hostId: 123,
   },
   {
     id: "2",
-    name: "TrailX Pulse 200",
-    price: 90,
+    name: "Kawasaki Ninja",
+    price: 150,
     description:
-      "TrailX Pulse 200 is made for rough terrains—broken roads, village paths, and hill climbs. Lightweight body and sharp suspension give you full control off-road.",
+      "A sharp and lightweight sports bike built for performance and cornering control.",
     imageUrl:
-      "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png",
-    type: "rugged",
+      "https://images.pexels.com/photos/18213262/pexels-photo-18213262.jpeg",
+    type: "sport",
     hostId: 123,
   },
   {
     id: "3",
-    name: "Highlander Cruise 500",
-    price: 150,
+    name: "Ducati Monster",
+    price: 180,
     description:
-      "Highlander Cruise 500 is a premium touring beast. Smooth engine, extra comfort seating, and superior stability for ultra-long rides like Bangalore–Leh.",
+      "An aggressive street machine with powerful acceleration and premium engineering.",
     imageUrl:
-      "https://assets.scrimba.com/advanced-react/react-router/reliable-red.png",
-    type: "luxury",
+      "https://images.pexels.com/photos/30428900/pexels-photo-30428900.jpeg",
+    type: "sport",
     hostId: 123,
   },
   {
     id: "4",
-    name: "MountainRover 300",
-    price: 110,
+    name: "Yamaha R5X",
+    price: 140,
     description:
-      "MountainRover 300 blends power and agility for hill stations like Munnar and Wayanad. High ground clearance and responsive pulling power make it adventure-ready.",
+      "A balanced sports-tourer designed for long rides and spirited performance.",
     imageUrl:
-      "https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png",
-    type: "simple",
+      "https://images.pexels.com/photos/9827723/pexels-photo-9827723.jpeg",
+    type: "sport",
     hostId: 124,
   },
   {
     id: "5",
-    name: "Enfieldor Classic 350X",
-    price: 140,
+    name: "Royal Enfield Himalayan",
+    price: 130,
     description:
-      "Enfieldor Classic 350X delivers the classic thump feel with modern comfort. Ideal for smooth highway cruising, city touring, and long scenic rides.",
+      "A rugged adventure bike built for mountains, trails, and tough terrain.",
     imageUrl:
-      "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png",
-    type: "luxury",
+      "https://images.pexels.com/photos/8425811/pexels-photo-8425811.png",
+    type: "adventure",
     hostId: 123,
   },
   {
     id: "6",
-    name: "RoadKing 400",
-    price: 130,
+    name: "Black Cruiser 500",
+    price: 160,
     description:
-      "RoadKing 400 is built for riders who love speed and stability. Perfect for long stretches, night rides, and strong highway performance across South India.",
+      "A stylish cruiser built for relaxed long-distance touring with comfort.",
+    imageUrl: "https://images.pexels.com/photos/34006/pexels-photo.jpg",
+    type: "cruiser",
+    hostId: 125,
+  },
+  {
+    id: "7",
+    name: "BMW Roadster",
+    price: 200,
+    description:
+      "A premium roadster offering sharp handling and smooth performance.",
     imageUrl:
-      "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png",
-    type: "rugged",
+      "https://images.pexels.com/photos/1191109/pexels-photo-1191109.jpeg",
+    type: "sport",
+    hostId: 123,
+  },
+  {
+    id: "8",
+    name: "Ducati Scrambler",
+    price: 170,
+    description:
+      "A retro scrambler with modern performance, suitable for city and light off-road.",
+    imageUrl:
+      "https://images.pexels.com/photos/8664185/pexels-photo-8664185.jpeg",
+    type: "adventure",
     hostId: 125,
   },
 ];
