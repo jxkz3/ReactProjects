@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import "./pages.css";
+import "./Pages.css";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Bikes from "./pages/Bikes";
