@@ -7,7 +7,6 @@ export default function NotFound() {
     <div className="not-found-container">
       <h1>Page your looking is Not availabe</h1>
       <button onClick={() => navigation("/")} className="bike-btn">
-        {" "}
         Back to home
       </button>
     </div>

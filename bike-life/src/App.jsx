@@ -24,6 +24,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import Login from "./components/Login";
 
 function App() {
   const router = createBrowserRouter(
@@ -49,6 +50,7 @@ function App() {
         </Route>
 
         <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
       </>
     )
   );
