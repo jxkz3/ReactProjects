@@ -1,21 +1,22 @@
-import { Navigate, redirect } from "react-router-dom";
-import { loginUser } from "../auth";
+import { useNavigate, Form, useActionData } from "react-router-dom";
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  const email = formData.get("email");
+  const password = formData.get("password");
+  console.log(email, password);
+}
 
 export default function Login() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    loginUser();
-    Navigate("/host");
-  }
-
   return (
     <div className="loginpage-container">
       <h1> Login Page </h1>
-      <form className="login-form" onChange={handleSubmit}>
-        <input type="email" required />
-        <input type="password" required />
+      <Form method="post" className="login-form">
+        <input type="email" name="email" required />
+
+        <input type="password" name="password" required />
         <input type="submit" value="Log in" />
-      </form>
+      </Form>
     </div>
   );
 }

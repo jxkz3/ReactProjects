@@ -1,5 +1,5 @@
 export function isLoggedIn() {
-  return localStorage.getItem("token");
+  return !localStorage.getItem("token");
 }
 
 export function loginUser() {

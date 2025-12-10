@@ -24,7 +24,8 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import Login from "./components/Login";
+import Login, { action as loginAction } from "./components/Login";
+import RequireAuth from "./components/RequireAuth";
 
 function App() {
   const router = createBrowserRouter(
@@ -36,7 +37,14 @@ function App() {
           <Route path="/bikes" element={<Bikes />} />
           <Route path="/bikes/:id" element={<BikeDetails />} />
 
-          <Route path="/host" element={<Host />}>
+          <Route
+            path="/host"
+            element={
+              <RequireAuth>
+                <Host />
+              </RequireAuth>
+            }
+          >
             <Route index element={<DashBoard />} />
             <Route path="income" element={<Income />} />
             <Route path="review" element={<Review />} />
@@ -48,9 +56,9 @@ function App() {
             </Route>
           </Route>
         </Route>
+        <Route path="/login" element={<Login />} action={loginAction} />
 
         <Route path="*" element={<NotFound />} />
-        <Route path="/login" element={<Login />} />
       </>
     )
   );
