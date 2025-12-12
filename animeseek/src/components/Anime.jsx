@@ -7,12 +7,10 @@ function Anime({ genre, animeShown, animeSection }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Scroll to this section when Anime mounts (once)
   useEffect(() => {
     animeSection.current.scrollIntoView({ behavior: "smooth" });
   }, [isLoading]);
 
-  // Fetch new anime titles each time "Get Animes" is toggled on
   useEffect(() => {
     if (animeShown) generateAnime();
   }, [animeShown]);

@@ -10,10 +10,10 @@ export default function Content() {
         <h3>React Developer</h3>
 
         <p>
-          I work with React and build real-world projects to get better. I’ve
-          done security and bug hunting, so I pay attention to how things break.
-          I’m learning Node and Express to understand the backend properly and
-          become productive on both sides.
+          I work with React and build real-world projects to improve my skills.
+          I’ve done security and bug hunting in the past, which helps me
+          recognize common OWASP issues. I’m now learning Node and Express to
+          understand the backend properly and become productive on both sides.
         </p>
         <Link to="/about" className="about-link">
           Learn more about me →

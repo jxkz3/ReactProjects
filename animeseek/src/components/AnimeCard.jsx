@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 
 const cache = {};
-let fetchQueue = Promise.resolve(); // global queue
+let fetchQueue = Promise.resolve();
 
-// helper: queued fetch with delay (2.5s between each call)
 async function queuedFetch(url) {
   const result = await (fetchQueue = fetchQueue.then(async () => {
     await new Promise((r) => setTimeout(r, 2500));
@@ -38,7 +37,6 @@ function AnimeCard({ title }) {
 
         if (!isCancelled) {
           if (data.data?.length) {
-            // find best matching title
             const cleaned = title.toLowerCase().replace(/[^\w\s]/g, "");
             const match =
               data.data.find((a) => {
