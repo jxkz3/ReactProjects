@@ -127,6 +127,13 @@ header a:active {
   font-weight: 600;
 }
 
+.logout-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 /* BIKE DETAILS */
 .bike-detail-ct {
   display: flex;
