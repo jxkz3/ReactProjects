@@ -1,5 +1,5 @@
-import { Form, redirect } from "react-router-dom";
-import { loginUser } from "../auth";
+import { Form, redirect, Navigate } from "react-router-dom";
+import { loginUser, isLoggedIn } from "../auth";
 
 export async function action({ request }) {
   const formData = await request.formData();
@@ -12,6 +12,9 @@ export async function action({ request }) {
 }
 
 export default function Login() {
+  if (isLoggedIn()) {
+    return <Navigate to={lastknownpath} replace />;
+  }
   return (
     <div className="container">
       <div className="loginpage-container">

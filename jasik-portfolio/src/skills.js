@@ -9,7 +9,7 @@ export const skills = [
   },
   {
     category: "Database",
-    items: ["MongoDB", "Firebase"],
+    items: ["MongoDB", "GraphQL"],
   },
   {
     category: "Tools",
