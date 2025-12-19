@@ -1,6 +1,7 @@
 import ProjectsCard from "./ProjectsCard";
 import SkillCard from "./SkillCard";
 import { Link } from "react-router-dom";
+import Intigriti from "/src/assets/intigriti-svgrepo-com.svg";
 
 export default function Content() {
   return (
@@ -15,6 +16,11 @@ export default function Content() {
           recognize common OWASP issues. I’m now learning Node and Express to
           understand the backend properly and become productive on both sides.
         </p>
+        <div>
+          <a href="https://www.linkedin.com/in/jxkz/"></a>
+          <a href="https://hackerone.com/jxkz"></a>
+          <a href="https://app.intigriti.com/researcher/profile/jxkz"></a>
+        </div>
         <Link to="/about" className="about-link">
           Learn more about me →
         </Link>
